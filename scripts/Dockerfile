@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
     go build -ldflags="-s -w" -o memos ./cmd/memos
 
-FROM alpine:latest AS monolithic
+FROM alpine:3.23.3 AS monolithic
 WORKDIR /usr/local/memos
 
 RUN apk add --no-cache tzdata
